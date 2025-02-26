@@ -7,7 +7,7 @@ import { getEnvironments, localizer, getMessages } from '../../helpers';
 
 const events = [{
   title: 'Cumpleaños del Jefe',
-  notes: 'Hay que comprar el pastel',
+  notes : 'Hay que comprar el pastel',
   start: new Date(),
   end: addHours(new Date(), 2),
   bgColor: '#fafafa',
@@ -18,8 +18,7 @@ const events = [{
 }];
 
 export const CalendarPage = () => {
-  const [lastView] = useState(localStorage.getItem('lastView') || 'week');
-  // const [lastView, setlastView] = useState(localStorage.getItem('lastView') || 'week');
+  const [lastView, setlastView] = useState('week');
 
   const {
     VITE_LENGUAGE,
@@ -39,10 +38,8 @@ export const CalendarPage = () => {
   };
 
   const onViewChanged = (event) => {
-    // const { viewChanged } = event;
-    // setDefaultView(event);
     localStorage.setItem('lastView', event);
-    console.log({ viewChanged: event });
+    setlastView(event);
   };
 
   const onDoubleClick = (event) => {
@@ -57,10 +54,10 @@ export const CalendarPage = () => {
     <>
       <Navbar />
       <Calendar
-        culture="es-ES"
+        culture={VITE_LENGUAGE}
         localizer={localizer}
-        defaultView={lastView}
         events={events}
+        defaultView={lastView}
         startAccessor="start"
         endAccessor="end"
         style={{ height: 'calc( 100vh - 80px )' }}
@@ -75,4 +72,4 @@ export const CalendarPage = () => {
       />
     </>
   );
-};
+}

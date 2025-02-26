@@ -2399,7 +2399,7 @@ punycode@^2.1.0:
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.3.1.tgz#027422e2faec0b25e1549c3e1bd8309b9133b6e5"
   integrity sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==
 
-react-big-calendar@^1.13.1:
+react-big-calendar@^1.18.0:
   version "1.18.0"
   resolved "https://registry.yarnpkg.com/react-big-calendar/-/react-big-calendar-1.18.0.tgz#feace5727cca7b65f9b6e314529fa512a49c9ad1"
   integrity sha512-bGrCdyfnCGe2qnIdEoGkGgQdEFOiGO1Tq7RLkI1a2t8ZudyEAKekFtneO2/ltKQEQK6zH76YdJ7vR9UMyD+ULw==

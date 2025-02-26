@@ -18,7 +18,7 @@ const events = [{
 }];
 
 export const CalendarPage = () => {
-  // const [defaultView] = useState(localStorage.getItem('lastView') || 'week');
+  const [lastView] = useState(localStorage.getItem('lastView') || 'week');
   // const [lastView, setlastView] = useState(localStorage.getItem('lastView') || 'week');
 
   const {
@@ -41,7 +41,7 @@ export const CalendarPage = () => {
   const onViewChanged = (event) => {
     // const { viewChanged } = event;
     // setDefaultView(event);
-    // localStorage.setItem('lastView', event);
+    localStorage.setItem('lastView', event);
     console.log({ viewChanged: event });
   };
 
@@ -59,7 +59,7 @@ export const CalendarPage = () => {
       <Calendar
         culture="es-ES"
         localizer={localizer}
-        // defaultView={defaultView}
+        defaultView={lastView}
         events={events}
         startAccessor="start"
         endAccessor="end"
@@ -75,4 +75,4 @@ export const CalendarPage = () => {
       />
     </>
   );
-}
+};

@@ -18,7 +18,7 @@ const events = [{
 }];
 
 export const CalendarPage = () => {
-  const [lastView, setlastView] = useState('week');
+  const [lastView, setlastView] = useState(localStorage.getItem('lastView') || 'week');
 
   const {
     VITE_LENGUAGE,

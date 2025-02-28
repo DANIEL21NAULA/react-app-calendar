@@ -2,12 +2,12 @@ import { useState } from 'react';
 import { Calendar } from 'react-big-calendar';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import { addHours } from 'date-fns';
-import { CalendarEvent, Navbar } from '..';
+import { CalendarEvent, CalendarModal, Navbar } from '..';
 import { getEnvironments, localizer, getMessages } from '../../helpers';
 
 const events = [{
   title: 'Cumpleaños del Jefe',
-  notes : 'Hay que comprar el pastel',
+  notes: 'Hay que comprar el pastel',
   start: new Date(),
   end: addHours(new Date(), 2),
   bgColor: '#fafafa',
@@ -57,8 +57,8 @@ export const CalendarPage = () => {
         culture={VITE_LENGUAGE}
         localizer={localizer}
         events={events}
-        defaultView={lastView}
         startAccessor="start"
+        defaultView={lastView}
         endAccessor="end"
         style={{ height: 'calc( 100vh - 80px )' }}
         messages={getMessages(VITE_LENGUAGE)}
@@ -70,6 +70,7 @@ export const CalendarPage = () => {
         onSelectEvent={onSelect}
         onView={onViewChanged}
       />
+      <CalendarModal />
     </>
   );
 }

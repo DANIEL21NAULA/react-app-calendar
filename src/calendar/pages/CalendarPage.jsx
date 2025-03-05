@@ -6,6 +6,7 @@ import {
   CalendarModal,
   FabAddNew,
   Navbar,
+  FabDelete,
 } from '..';
 import { getEnvironments, localizer, getMessages } from '../../helpers';
 import { useUiStore, useCalendarStore } from '../../hooks';
@@ -13,7 +14,7 @@ import { useUiStore, useCalendarStore } from '../../hooks';
 export const CalendarPage = () => {
   const { handleOpenDateModal } = useUiStore();
   const [lastView, setlastView] = useState(localStorage.getItem('lastView') || 'week');
-  const { events, setActiveEvent } = useCalendarStore();
+  const { events, setActiveEvent, hasEventSelected } = useCalendarStore();
 
   const {
     VITE_LENGUAGE,
@@ -67,6 +68,9 @@ export const CalendarPage = () => {
       />
       <CalendarModal />
       <FabAddNew />
+      {
+        (hasEventSelected) ? <FabDelete /> : ''
+      }
     </>
   );
 };

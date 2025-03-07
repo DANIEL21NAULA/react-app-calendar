@@ -38,7 +38,7 @@ export const CalendarPage = () => {
     setlastView(event);
   };
 
-  const onDoubleClick = (event) => {
+  const onDoubleClick = () => {
     handleOpenDateModal();
   };
 
